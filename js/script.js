@@ -27,7 +27,7 @@ const personalMovieDB = {
             }
         }
     },
-    detectPersonalLevel() {
+    detectPersonalLevel: function() {
         if (personalMovieDB.count < 10) {
             console.log("Просмотрено довольно мало фильмов");
         } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
@@ -38,16 +38,14 @@ const personalMovieDB = {
             console.log("Произошла ошибка");
         }
     },
+    showMyDB: function(hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    }
 
 };
 
-
-function showMyDB(hidden) {
-    if (!hidden) {
-        console.log(personalMovieDB);
-    }
-}
-showMyDB(personalMovieDB.privat);
 
 function writeYourGenres() {
     for (let i = 1; i <= 3; i++) {
